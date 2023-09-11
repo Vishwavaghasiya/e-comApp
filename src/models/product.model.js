@@ -30,6 +30,13 @@ const productSchema = new mongoose.Schema(
     {
         timeStamps: true,
         versionKey: false,
+        toJSON: {
+            transform: function (doc, data) {
+                if (data?.product_image) {
+                    data.product_image = `${config.base_url}product_images/${data.product_image}`;
+                }
+            },
+        },
     }
 );
 
