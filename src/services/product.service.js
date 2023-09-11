@@ -5,7 +5,7 @@ const createProduct = async (reqBody) => {
 }
 
 const getProductList = async (req, res) => {
-    return Product.find();
+    return Product.find().populate("user").populate("category");
 }
 
 const deleteRecord = async (productId) => {

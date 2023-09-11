@@ -7,7 +7,7 @@ const createUser = async (reqBody) => {
 
 /**Get list */
 const getUserList = async (req, res) => {
-  return User.find({ $or: [{ is_active: true }] });
+  return User.find().populate("order").populate("product").populate("cart");
 }
 
 /**Delete record */

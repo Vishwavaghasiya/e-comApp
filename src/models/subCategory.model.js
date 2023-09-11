@@ -2,17 +2,17 @@ const mongoose = require('mongoose');
 
 const subCategorySchema = new mongoose.Schema(
     {
-        name : {
-            type : String,
-            trim : true
+        name: {
+            type: String,
+            trim: true
         },
-        description : {
-            type : String,
-            trim : true
+        description: {
+            type: String,
+            trim: true
         },
-        category : {
-            type : mongoose.Types.ObjectId,
-            ref : "category"
+        category: {
+            type: mongoose.Types.ObjectId,
+            ref: "category"
         },
         id_active: {
             type: Boolean,

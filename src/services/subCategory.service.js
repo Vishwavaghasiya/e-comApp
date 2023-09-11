@@ -7,7 +7,7 @@ const createSubCategory = async (reqBody) => {
 
 /**get list */
 const getSubCategoryList = async (req, res) => {
-    return SubCategory.find();
+    return SubCategory.find().populate("category");
 }
 
 /**find by id */

@@ -7,7 +7,7 @@ const createCategory = async (reqBody) => {
 
 /**Get list */
 const getCategoryList = async (req, res) => {
-    return Category.find();
+    return Category.find().populate("subCategory").populate("subChildCategory");
 }
 
 /**Delete record */

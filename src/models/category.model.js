@@ -14,6 +14,10 @@ const categorySchema = new mongoose.Schema(
             type : String,
             trim : true
         },
+        user : {
+            type : mongoose.Types.ObjectId,
+            ref : "user"
+        },
         subCategory : {
             type : mongoose.Types.ObjectId,
             ref : "subCategory"

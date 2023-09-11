@@ -10,8 +10,8 @@ const createUser = {
         lastName : Joi.string().required().trim(),
         dateOfBirth : Joi.string().required().trim(),
         order : Joi.string().required().trim(),
-        wishlist : Joi.string().required().trim(),
-        review : Joi.string().required().trim(),
+        product : Joi.string().required().trim(),
+        cart : Joi.string().required().trim(),
     }),
 };
 

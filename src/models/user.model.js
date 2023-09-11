@@ -6,13 +6,13 @@ const userSchema = new mongoose.Schema(
             type: mongoose.Types.ObjectId,
             ref: 'order'
         },
-        wishlist: {
+        product: {
             type: mongoose.Types.ObjectId,
-            ref: 'wishlist'
+            ref: 'product'
         },
-        review: {
+        cart: {
             type: mongoose.Types.ObjectId,
-            ref: 'review'
+            ref: 'cart'
         },
         userName: {
             type: String,
@@ -49,5 +49,5 @@ const userSchema = new mongoose.Schema(
     }
 );
 
-const User = mongoose.model("users", userSchema);
+const User = mongoose.model("user", userSchema);
 module.exports = User;
