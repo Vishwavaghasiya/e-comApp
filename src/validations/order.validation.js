@@ -1,6 +1,5 @@
 const Joi = require('joi');
 
-/** create order */
 const createOrder = {
     body : Joi.object().keys({
         shippingAddress : Joi.string().required().trim(),

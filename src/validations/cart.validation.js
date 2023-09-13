@@ -1,6 +1,5 @@
 const Joi = require('joi');
 
-/** create cart */
 const createCart = {
     body : Joi.object().keys({
         status : Joi.string().required().trim(),
