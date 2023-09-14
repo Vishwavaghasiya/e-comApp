@@ -9,7 +9,7 @@ const generateToken = async (req, res) => {
         // console.log(reqBody);
 
         const saveToken = await tokenService.saveToken(reqBody);
-        console.log(saveToken);
+        // console.log(saveToken);
         res.status(200).json(
             {
                 success: true,

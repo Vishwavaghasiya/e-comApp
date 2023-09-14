@@ -1,8 +1,8 @@
 const express = require("express");
 
-// const validate = require("../../middlewares/validate");
-// const {tokenValidation} = require("../../validations");
-const {tokenController} = require("../../controllers");
+const { tokenController } = require("../../controllers");
+const { tokenValidation } = require("../../validations");
+const validate = require("../../middlewares/validate");
 // const auth = require("../../middlewares/auth");
 
 const router = express.Router();
@@ -10,7 +10,7 @@ const router = express.Router();
 /**create jsonWebToken */
 router.post(
     "/create-token",
-    // validate(tokenValidation.generateToken),
+    validate(tokenValidation.generateTokens),
     tokenController.generateToken
 );
 

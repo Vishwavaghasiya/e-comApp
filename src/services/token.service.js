@@ -7,17 +7,20 @@ const generateToken = async (reqBody) => {
     let payload = {
         ...reqBody
     };
-    return jwt.sign(payload , config.jwt.secret_key);
+    return jwt.sign(payload, config.jwt.secret_key);
 }
 
 /**save token in our database*/
-const saveToken  = async (reqBody) => {
-    // return await Token.findByIdAndUpdate(
-    //     {user : reqBody.user},
-    //     {$set : {...reqBody}},
-    //     {new : true , upsert :true}
-    // );
-    return reqBody
+const saveToken = async (reqBody) => {
+    return await Token.findOneAndUpdate(
+        { user: reqBody.user },
+        {
+            $set: {
+                ...reqBody,
+            }
+        },
+        { new: true, upsert: true }
+    );
 }
 
 module.exports = {

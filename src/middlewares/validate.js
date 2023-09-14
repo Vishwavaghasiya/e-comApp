@@ -17,7 +17,7 @@ const validate = (schema) => (req, res, next) => {
             .join(", ");
         return next(new Error(errorMessage));
     }
-    console.log(req, value, 'req, value');
+
     Object.assign(req, value);
     return next();
 };
