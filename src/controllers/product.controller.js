@@ -1,9 +1,16 @@
+const fs = require("fs");
 const { productService } = require("../services");
 
 /** create product record */
 const createProduct = async (req, res) => {
     try {
         const reqBody = req.body;
+
+        if (req.file) {
+            reqBody.product_image = req.file.filename;
+        } else {
+            throw new Error("Product image is required!");
+        }
 
         const product = await productService.createProduct(reqBody);
         if (!product) {
@@ -28,7 +35,7 @@ const getProductList = async (req, res) => {
         res.status(200).json({
             success: true,
             message: "Your product list create successfullYyy !",
-            data:getList
+            data: getList
         });
     } catch (error) {
         res.status(400).json({

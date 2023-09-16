@@ -1,5 +1,6 @@
 const express = require('express');
 
+const { upload } = require("../../middlewares/upload")
 const { productController } = require('../../controllers');
 const { productValidation } = require('../../validations');
 const validate = require('../../middlewares/validate');
@@ -8,6 +9,7 @@ const router = express.Router();
 
 router.post(
     "/create-product",
+    upload.single("product_image"),
     validate(productValidation.createProduct),
     productController.createProduct
 );

@@ -8,7 +8,7 @@ dotenv.config({ path: "./.env" });
 const envVarsSchema = Joi.object({
     PORT: Joi.number().default(3000),
     MONGODB_URL: Joi.string().trim().description("Mongodb url"),
-    // BASE_URL: Joi.string().trim().description("Mongodb url"),
+    BASE_URL: Joi.string().trim().description("Base URL"),
     JWT_SECRET_KEY: Joi.string().description("Jwt secret key")
 }).unknown();
 
@@ -31,7 +31,7 @@ module.exports = {
             useUnifiedTopology: true,
         },
     },
-    // base_url: envVars.BASE_URL,
+    base_url: envVars.BASE_URL,
     jwt: {
         secret_key: envVars.JWT_SECRET_KEY
     },

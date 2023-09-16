@@ -14,11 +14,7 @@ const generateToken = async (reqBody) => {
 const saveToken = async (reqBody) => {
     return await Token.findOneAndUpdate(
         { user: reqBody.user },
-        {
-            $set: {
-                ...reqBody,
-            }
-        },
+        { $set: { ...reqBody } },
         { new: true, upsert: true }
     );
 }
